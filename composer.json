@@ -1,0 +1,53 @@
+{
+    "name": "ssiva/mpesa-lumen-sdk",
+    "description": "This package provides a seamless integration of M-PESA Daraja APIs in Lumen applications",
+    "type": "library",
+    "require": {
+        "ssiva/mpesa-daraja": "^4",
+        "illuminate/support": "*"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9.1",
+        "mockery/mockery": "^1.4.4",
+        "phpunit/phpunit": "^10.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ssiva\\MpesaLumenSdk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MpesaLumenSdk\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ssiva\\MpesaLumenSdk\\MpesaServiceProvider"
+            ],
+            "aliases": {
+                "MpesaDaraja": "Ssiva\\MpesaLumenSdk\\MpesaFacade"
+            },
+            "config": [
+                "config/mpesa.php"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+
+        ],
+        "post-update-cmd": [
+
+        ]
+    },
+    "authors": [
+        {
+            "name": "Simon Siva",
+            "email": "simonsiva13@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
