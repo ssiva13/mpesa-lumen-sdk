@@ -23,7 +23,7 @@
         }
     },
     "extra": {
-        "laravel": {
+        "lumen": {
             "providers": [
                 "Ssiva\\MpesaLumenSdk\\MpesaServiceProvider"
             ],
