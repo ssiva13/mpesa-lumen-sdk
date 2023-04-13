@@ -29,14 +29,14 @@ With this package, developers can seamlessly integrate M-PESA Daraja APIs in the
         to 
         ```php
         $app->withFacades(true, [
-        \Ssiva\MpesaDaraja\Facades\MpesaFacade::class => 'MpesaDaraja',
+        \Ssiva\MpesaLumenSdk\MpesaFacade::class => 'MpesaDaraja',
         ]);
         ```
 
    - Register the Mpesa ServiceProvider
      ```php
       // Mpesa ServiceProvider
-      $app->register(\Ssiva\MpesaDaraja\MpesaServiceProvider::class);
+      $app->register(\Ssiva\MpesaLumenSdk\MpesaServiceProvider::class);
      ```
 
 ### Configuration

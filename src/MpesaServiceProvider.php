@@ -18,9 +18,9 @@ class MpesaServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $this->publishes([
-        //     __DIR__.'/../config/mpesa.php' => config_path('mpesa.php')
-        // ], 'mpesa_config');
+        $this->publishes([
+            __DIR__.'/config/mpesa.php' => approot_path('config/mpesa.php')
+        ], 'mpesa_config');
     }
     
     /**
@@ -28,8 +28,10 @@ class MpesaServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('mpesa-daraja', function () {
-            return new Mpesa();
+        $this->app->bind('mpesa-daraja', function ($app) {
+            $config = $app['config']->get('mpesa');
+            $config = $config ?: [] ;
+            return new Mpesa($config);
         });
     }
 }
